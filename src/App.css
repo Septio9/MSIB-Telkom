@@ -1,0 +1,142 @@
+/* src/App.css */
+.chat-box {
+  width: 400px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.messages {
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding-right: 10px;
+  scrollbar-width: thin;
+}
+
+.messages::-webkit-scrollbar {
+  width: 5px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 10px;
+}
+
+.input-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.input-box input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.input-box button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.input-box button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.message {
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 75%;
+  word-wrap: break-word;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.message.user {
+  background-color: #007bff;
+  color: white;
+  text-align: right;
+  margin-left: auto;
+  animation: slide-in-right 0.5s ease forwards;
+}
+
+.message.assistant {
+  background-color: #f1f1f1;
+  color: #333;
+  text-align: left;
+  margin-right: auto;
+  animation: slide-in-left 0.5s ease forwards;
+}
+
+.message.user:hover,
+.message.assistant:hover {
+  transform: scale(1.05);
+}
+
+.recommended-questions {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.recommended-questions ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recommended-questions li {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.recommended-questions li:hover {
+  color: #0056b3;
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
